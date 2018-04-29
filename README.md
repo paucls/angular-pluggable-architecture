@@ -4,6 +4,8 @@ This is an example of an Angular application that allows to dynamically plug fun
 The application is a simple Dashboard with Widgets that are loaded
 at runtime from external sources.
 
+![app screenshot](dashboard.gif)
+
 ## To do
 - Support components that use separate template and css files.
 - Support production build with AOT.
