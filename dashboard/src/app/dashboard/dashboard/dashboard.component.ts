@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { DashboardService } from '../dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  @ViewChild('content', {read: ViewContainerRef}) content: ViewContainerRef;
 
   constructor(private dashboardService: DashboardService) { }
 
