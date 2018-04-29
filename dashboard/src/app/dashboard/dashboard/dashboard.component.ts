@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Compiler, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -8,9 +8,9 @@ import { DashboardService } from '../dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  @ViewChild('content', {read: ViewContainerRef}) content: ViewContainerRef;
+  @ViewChild('content', { read: ViewContainerRef }) content: ViewContainerRef;
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private compiler: Compiler, private dashboardService: DashboardService) { }
 
   ngOnInit() {
     this.loadWidgets();
