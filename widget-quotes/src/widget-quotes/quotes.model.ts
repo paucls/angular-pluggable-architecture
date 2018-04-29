@@ -1,0 +1,3 @@
+interface Quotes {
+    contents: any[];
+}

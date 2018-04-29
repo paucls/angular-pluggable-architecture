@@ -8,5 +8,10 @@
         "name": "widget-hello",
         "moduleBundlePath": "http://localhost:4200/widgets-repo/widget-hello.bundle.js",
         "moduleName": "WidgetHelloModule"
+    },
+    {
+        "name": "widget-quotes",
+        "moduleBundlePath": "http://localhost:4200/widgets-repo/widget-quotes.bundle.js",
+        "moduleName": "WidgetQuotesModule"
     }
 ]
