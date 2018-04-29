@@ -54,7 +54,7 @@ var WidgetTodaysDateComponent = (function () {
     WidgetTodaysDateComponent = __decorate([
         Component({
             selector: 'widget-todays-date',
-            template: "\n  <div>\n    {{currentDate | date}}\n  </div>\n  "
+            template: "\n  <div class=\"card\">\n    <div class=\"card-block\">\n      {{currentDate | date}}\n    </div>\n  </div>\n  "
         }),
         __metadata("design:paramtypes", [])
     ], WidgetTodaysDateComponent);

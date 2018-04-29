@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/@clr/ui/clr-ui.min.css",
         "styles.css"
       ],
       "scripts": [

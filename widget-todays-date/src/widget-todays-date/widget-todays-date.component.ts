@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'widget-todays-date',
   template: `
-  <div>
-    {{currentDate | date}}
+  <div class="card">
+    <div class="card-block">
+      {{currentDate | date}}
+    </div>
   </div>
   `
 })

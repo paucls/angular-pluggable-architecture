@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'widget-hello',
   template: `
-  <div>
-    <h3>Hello World!</h3>
+  <div class="card">
+    <div class="card-block">
+      <h3>Hello World!</h3>
+    </div>
   </div>
   `
 })

@@ -159,6 +159,10 @@
   dependencies:
     tslib "^1.7.1"
 
+"@clr/ui@^0.11.15":
+  version "0.11.15"
+  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-0.11.15.tgz#a322149746c055ead53a232ac882f439513eb9ee"
+
 "@ngtools/json-schema@1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.2.0.tgz#06e5ecd29e9a37d260a447dd873ea2becd228c4f"
