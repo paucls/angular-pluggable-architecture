@@ -9,8 +9,8 @@ export class QuotesService {
 
   private readonly url = 'https://quotes.rest/qod?category=inspire';
 
-  getQuotesOfTheDay(): Observable<Quotes[]> {
-    return this.http.get<Quotes[]>(this.url);
+  getQuotesOfTheDay(): Observable<Quotes> {
+    return this.http.get<Quotes>(this.url);
   }
 
 }

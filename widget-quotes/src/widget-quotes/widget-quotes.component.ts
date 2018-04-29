@@ -10,7 +10,7 @@ import { QuotesService } from './quotes.service';
         widget-quotes
       </div>
       <div class="card-text">
-        ...
+        {{quote}}
       </div>
     </div>
   </div>
@@ -18,8 +18,12 @@ import { QuotesService } from './quotes.service';
 })
 export class WidgetQuotesComponent implements OnInit {
 
+  quote: string = 'loading ...';
+
   constructor(private quotesService: QuotesService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.quotesService.getQuotesOfTheDay().subscribe((quotes: Quotes) => this.quote = quotes.contents.quotes[0].quote);
+  }
 
 }

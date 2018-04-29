@@ -67,12 +67,16 @@ var QuotesService = (function () {
 var WidgetQuotesComponent = (function () {
     function WidgetQuotesComponent(quotesService) {
         this.quotesService = quotesService;
+        this.quote = 'loading ...';
     }
-    WidgetQuotesComponent.prototype.ngOnInit = function () { };
+    WidgetQuotesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.quotesService.getQuotesOfTheDay().subscribe(function (quotes) { return _this.quote = quotes.contents.quotes[0].quote; });
+    };
     WidgetQuotesComponent = __decorate([
         Component({
             selector: 'widget-quotes',
-            template: "\n  <div class=\"card\">\n    <div class=\"card-block\">\n      <div class=\"card-title\">\n        widget-quotes\n      </div>\n      <div class=\"card-text\">\n        ...\n      </div>\n    </div>\n  </div>\n  "
+            template: "\n  <div class=\"card\">\n    <div class=\"card-block\">\n      <div class=\"card-title\">\n        widget-quotes\n      </div>\n      <div class=\"card-text\">\n        {{quote}}\n      </div>\n    </div>\n  </div>\n  "
         }),
         __metadata("design:paramtypes", [QuotesService])
     ], WidgetQuotesComponent);

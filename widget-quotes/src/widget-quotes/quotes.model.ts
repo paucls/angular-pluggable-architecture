@@ -1,3 +1,3 @@
 interface Quotes {
-    contents: any[];
+    contents: { quotes: { quote: string }[] };
 }
