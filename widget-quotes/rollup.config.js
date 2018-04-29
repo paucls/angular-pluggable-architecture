@@ -1,5 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
+import commonjs from 'rollup-plugin-commonjs';
 
 export default {
     input: 'src/main.ts',
@@ -16,12 +17,14 @@ export default {
         }),
         typescript({
             typescript: require('typescript')
-        })
+        }),
+        commonjs()
     ],
     external: [
         'plugins-core',
         '@angular/core',
         '@angular/common',
+        '@angular/common/http',
         'rxjs/Observable'
     ]
 }

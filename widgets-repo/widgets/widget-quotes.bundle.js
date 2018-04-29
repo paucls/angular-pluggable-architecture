@@ -1,11 +1,14 @@
-System.register(['@angular/core', '@angular/common'], function (exports, module) {
+System.register(['@angular/core', '@angular/common/http', '@angular/common'], function (exports, module) {
 'use strict';
-var Injectable, Component, NgModule, CommonModule;
+var Injectable, Component, NgModule, HttpClient, HttpClientModule, CommonModule;
 return {
 setters: [function (module) {
 Injectable = module.Injectable;
 Component = module.Component;
 NgModule = module.NgModule;
+}, function (module) {
+HttpClient = module.HttpClient;
+HttpClientModule = module.HttpClientModule;
 }, function (module) {
 CommonModule = module.CommonModule;
 }],
@@ -47,14 +50,16 @@ function __metadata(metadataKey, metadataValue) {
 }
 
 var QuotesService = (function () {
-    function QuotesService() {
+    function QuotesService(http$$1) {
+        this.http = http$$1;
         this.url = 'https://quotes.rest/qod?category=inspire';
     }
     QuotesService.prototype.getQuotesOfTheDay = function () {
-        return null;
+        return this.http.get(this.url);
     };
     QuotesService = __decorate([
-        Injectable()
+        Injectable(),
+        __metadata("design:paramtypes", [HttpClient])
     ], QuotesService);
     return QuotesService;
 }());
@@ -79,7 +84,10 @@ var WidgetQuotesModule = (exports('WidgetQuotesModule', function () {
     }
     WidgetQuotesModule = __decorate([
         NgModule({
-            imports: [CommonModule],
+            imports: [
+                CommonModule,
+                HttpClientModule
+            ],
             declarations: [WidgetQuotesComponent],
             entryComponents: [WidgetQuotesComponent],
             providers: [
