@@ -4,6 +4,9 @@ This is an example of an Angular application that allows to dynamically plug fun
 The application is a simple Dashboard with Widgets that are loaded
 at runtime from external sources.
 
+## To do
+- Support components that use separate template and css files.
+
 ## References
 - Developing with Angular, Denys Vuika.
 https://github.com/DenisVuyka/developing-with-angular/tree/master/angular/plugins

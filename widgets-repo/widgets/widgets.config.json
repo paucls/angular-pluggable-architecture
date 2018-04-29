@@ -1,6 +1,7 @@
 [
     {
-        "name": "widget1",
-        "modulePath": "http://localhost:4200/widgets-repo/bundle.js"
+        "name": "widget-todays-date",
+        "moduleBundlePath": "http://localhost:4200/widgets-repo/widget-todays-date.bundle.js",
+        "moduleName": "WidgetTodaysDateModule"
     }
 ]

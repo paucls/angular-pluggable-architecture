@@ -23,7 +23,7 @@ SystemJS.set('@angular/platform-browser', SystemJS.newModule(angularPlatformBrow
 SystemJS.set('@angular/platform-browser-dynamic', SystemJS.newModule(angularPlatformBrowserDynamic));
 /** --------- */
 
-import { AfterViewInit, Compiler, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, Compiler, Injector, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 import { WidgetConfig } from '../widget-config.model';
 
@@ -36,7 +36,8 @@ export class DashboardComponent implements AfterViewInit {
 
   @ViewChild('content', { read: ViewContainerRef }) content: ViewContainerRef;
 
-  constructor(private compiler: Compiler, private dashboardService: DashboardService) { }
+  constructor(private compiler: Compiler, private dashboardService: DashboardService,
+    private injector: Injector) { }
 
   ngAfterViewInit() {
     this.loadWidgets();
@@ -48,8 +49,21 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   private async createWidget(widget: WidgetConfig) {
-    console.log(`Importing widget ${widget.name} module from ${widget.modulePath}`);
-    const module = await SystemJS.import(widget.modulePath);
+    // import external module bundle
+    console.log(`Importing module bundle: ${widget.moduleBundlePath}`);
+    const module = await SystemJS.import(widget.moduleBundlePath);
+
+    // compile module
+    const moduleFactory = await this.compiler.compileModuleAsync(module[widget.moduleName]);
+
+    // resolve component factory
+    const moduleRef = moduleFactory.create(this.injector);
+    const componentProvider = moduleRef.injector.get(widget.name);
+    const componentFactory = moduleRef.componentFactoryResolver.resolveComponentFactory(componentProvider);
+
+    // compile component
+    console.log(`Creating widget: ${widget.name}`);
+    this.content.createComponent(componentFactory);
   }
 
 }

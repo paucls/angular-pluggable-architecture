@@ -1,4 +1,5 @@
 export interface WidgetConfig {
     name: string;
-    modulePath: string;
+    moduleBundlePath: string;
+    moduleName: string;
 }
