@@ -6,6 +6,7 @@ at runtime from external sources.
 
 ## To do
 - Support components that use separate template and css files.
+- Support production build with AOT.
 
 ## References
 - Developing with Angular, Denys Vuika.
@@ -21,3 +22,5 @@ https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-comp
 https://youtu.be/pERhnBBae2k
 - Extension mechanism demo
 https://github.com/maximusk/extension-mechanism-demo
+- JIT Complier needed with AOT Build for Dynamic Component.
+https://github.com/angular/angular/issues/20875
