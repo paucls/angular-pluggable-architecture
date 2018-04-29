@@ -10,7 +10,7 @@ export class DashboardService {
 
   private readonly url = 'widgets-repo/widgets.config.json';
 
-  getWidgets(): Observable<WidgetConfig[]> {
+  getWidgetConfigs(): Observable<WidgetConfig[]> {
     return this.http.get<WidgetConfig[]>(this.url);
   }
 

@@ -23,7 +23,7 @@ SystemJS.set('@angular/platform-browser', SystemJS.newModule(angularPlatformBrow
 SystemJS.set('@angular/platform-browser-dynamic', SystemJS.newModule(angularPlatformBrowserDynamic));
 /** --------- */
 
-import { Compiler, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Compiler, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 import { WidgetConfig } from '../widget-config.model';
 
@@ -32,20 +32,19 @@ import { WidgetConfig } from '../widget-config.model';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements AfterViewInit {
 
   @ViewChild('content', { read: ViewContainerRef }) content: ViewContainerRef;
 
   constructor(private compiler: Compiler, private dashboardService: DashboardService) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.loadWidgets();
   }
 
-  private loadWidgets() {
-    this.dashboardService.getWidgets().subscribe((widgets) => {
-      widgets.forEach((widget) => this.createWidget(widget));
-    });
+  private async loadWidgets() {
+    const widgets = await this.dashboardService.getWidgetConfigs().toPromise();
+    widgets.forEach((widget) => this.createWidget(widget));
   }
 
   private async createWidget(widget: WidgetConfig) {
