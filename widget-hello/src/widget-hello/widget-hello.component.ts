@@ -5,7 +5,12 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <div class="card">
     <div class="card-block">
-      <h3>Hello World!</h3>
+      <div class="card-title">
+        widget-hello
+      </div>
+      <div class="card-text">
+        Hello World!
+      </div>
     </div>
   </div>
   `

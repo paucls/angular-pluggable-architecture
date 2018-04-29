@@ -52,7 +52,7 @@ var WidgetHelloComponent = (function () {
     WidgetHelloComponent = __decorate([
         Component({
             selector: 'widget-hello',
-            template: "\n  <div class=\"card\">\n    <div class=\"card-block\">\n      <h3>Hello World!</h3>\n    </div>\n  </div>\n  "
+            template: "\n  <div class=\"card\">\n    <div class=\"card-block\">\n      <div class=\"card-title\">\n        widget-hello\n      </div>\n      <div class=\"card-text\">\n        Hello World!\n      </div>\n    </div>\n  </div>\n  "
         }),
         __metadata("design:paramtypes", [])
     ], WidgetHelloComponent);

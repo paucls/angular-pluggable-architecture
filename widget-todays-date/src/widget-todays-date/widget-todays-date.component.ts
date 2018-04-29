@@ -5,7 +5,12 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <div class="card">
     <div class="card-block">
-      {{currentDate | date}}
+      <div class="card-title">
+        widget-todays-date
+      </div>
+      <div class="card-text">
+        {{currentDate | date}}
+      </div>
     </div>
   </div>
   `
