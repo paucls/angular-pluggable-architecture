@@ -1,0 +1,6 @@
+[
+    {
+        "name": "widget1",
+        "modulePath": "http://localhost:4200/widgets-repo/bundle.js"
+    }
+]

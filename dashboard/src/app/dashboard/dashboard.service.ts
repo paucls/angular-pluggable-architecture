@@ -8,7 +8,7 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly url = 'assets/widget-configs.json';
+  private readonly url = 'widgets-repo/widgets.config.json';
 
   getWidgets(): Observable<WidgetConfig[]> {
     return this.http.get<WidgetConfig[]>(this.url);
