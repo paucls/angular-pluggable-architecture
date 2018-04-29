@@ -1,0 +1,11 @@
+{
+  "name": "widgets-repo",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server widgets -p 4201"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
