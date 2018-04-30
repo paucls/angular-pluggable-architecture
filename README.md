@@ -7,8 +7,8 @@ at runtime from external sources.
 ![app screenshot](dashboard.gif)
 
 ## To do
-- Support components that use separate template and css files.
 - Support production build with AOT.
+- Widgets with separated template and css files should be compiled and inlined during the bundle build. Configure rollup to do that or use ng-packagr.
 
 ## References
 - Developing with Angular, Denys Vuika.

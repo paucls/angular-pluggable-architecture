@@ -1,17 +1,17 @@
 [
     {
         "name": "widget-todays-date",
-        "moduleBundlePath": "http://localhost:4200/widgets-repo/widget-todays-date.bundle.js",
+        "moduleBundlePath": "/widgets-repo/widget-todays-date.bundle.js",
         "moduleName": "WidgetTodaysDateModule"
     },
     {
         "name": "widget-hello",
-        "moduleBundlePath": "http://localhost:4200/widgets-repo/widget-hello.bundle.js",
+        "moduleBundlePath": "/widgets-repo/widget-hello.bundle.js",
         "moduleName": "WidgetHelloModule"
     },
     {
         "name": "widget-quotes",
-        "moduleBundlePath": "http://localhost:4200/widgets-repo/widget-quotes.bundle.js",
+        "moduleBundlePath": "/widgets-repo/widget-quotes.bundle.js",
         "moduleName": "WidgetQuotesModule"
     }
 ]
