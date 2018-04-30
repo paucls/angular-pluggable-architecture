@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
         widget-hello
       </div>
       <div class="card-text">
-        Hello World!
+        Hello World <exclamations></exclamations>
       </div>
     </div>
   </div>

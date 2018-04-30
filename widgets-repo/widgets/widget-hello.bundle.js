@@ -52,11 +52,25 @@ var WidgetHelloComponent = (function () {
     WidgetHelloComponent = __decorate([
         Component({
             selector: 'widget-hello',
-            template: "\n  <div class=\"card\">\n    <div class=\"card-block\">\n      <div class=\"card-title\">\n        widget-hello\n      </div>\n      <div class=\"card-text\">\n        Hello World!\n      </div>\n    </div>\n  </div>\n  "
+            template: "\n  <div class=\"card\">\n    <div class=\"card-block\">\n      <div class=\"card-title\">\n        widget-hello\n      </div>\n      <div class=\"card-text\">\n        Hello World <exclamations></exclamations>\n      </div>\n    </div>\n  </div>\n  "
         }),
         __metadata("design:paramtypes", [])
     ], WidgetHelloComponent);
     return WidgetHelloComponent;
+}());
+
+var ANestedComponent = (function () {
+    function ANestedComponent() {
+    }
+    ANestedComponent.prototype.ngOnInit = function () { };
+    ANestedComponent = __decorate([
+        Component({
+            selector: 'exclamations',
+            template: "\n  <span style=\"color: blue\">!!!</span>\n  "
+        }),
+        __metadata("design:paramtypes", [])
+    ], ANestedComponent);
+    return ANestedComponent;
 }());
 
 var WidgetHelloModule = (exports('WidgetHelloModule', function () {
@@ -65,7 +79,10 @@ var WidgetHelloModule = (exports('WidgetHelloModule', function () {
     WidgetHelloModule = __decorate([
         NgModule({
             imports: [CommonModule],
-            declarations: [WidgetHelloComponent],
+            declarations: [
+                WidgetHelloComponent,
+                ANestedComponent
+            ],
             entryComponents: [WidgetHelloComponent],
             providers: [{
                     provide: 'widget-hello',
