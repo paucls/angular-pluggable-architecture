@@ -21,6 +21,8 @@ SystemJS.set('@angular/forms', SystemJS.newModule(angularForms));
 SystemJS.set('@angular/animations', SystemJS.newModule(angularAnimations));
 SystemJS.set('@angular/platform-browser', SystemJS.newModule(angularPlatformBrowser));
 SystemJS.set('@angular/platform-browser-dynamic', SystemJS.newModule(angularPlatformBrowserDynamic));
+
+SystemJS.config({ meta: { '*': { authorization: true } } });
 /** --------- */
 
 import { AfterViewInit, Component, Compiler, Injector, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
