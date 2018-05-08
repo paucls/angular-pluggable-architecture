@@ -6,6 +6,27 @@ at runtime from external sources.
 
 ![app screenshot](dashboard.gif)
 
+This repo contains:
+- dahboard - An Angular CLI project that provides a widgets dashboard. To keep it simple all the logic in charge of dinamically fetching and compilings widgets is in the `dashboard.component.ts`.
+- widgets-repo - External repository from where the widgets configuration and bundles are served. (for this demo it is only static content served via http-server).
+- wiget-hello - An example of widget component containing nested sub-components.
+- wiget-quotes - An example of widget component that uses a service to retrieve quotes from an API.
+- widget-todays-date - Another widget component.
+
+## Running the demo
+- Build all widgets
+```
+./build_widgets.sh
+```
+- Start the widgets-repo
+```
+cd widgets-repo && yarn start
+```
+- Start dashboard app
+```
+cd dashboard && yarn start
+```
+
 ## To do
 - Support production build with AOT.
 - Widgets with separated template and css files should be compiled and inlined during the bundle build. Configure rollup to do that or use ng-packagr.
